@@ -5,6 +5,8 @@ body {
 }
 
 ::selection {
+  background-color: rgba(map-get($themeColors, "dark"), 0.3);
+  color: map-get($themeColors, "dark");
 }
 
 :focus-visible {
