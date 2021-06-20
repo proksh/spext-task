@@ -1,0 +1,15 @@
+// Display types
+$display: (
+  "flex": flex,
+  "grid": grid,
+  "block": block,
+  "inline": inline,
+  "inline-block": inline-block,
+  "none": none,
+);
+
+@each $key, $value in $display {
+  .d-#{$key} {
+    display: $value;
+  }
+}

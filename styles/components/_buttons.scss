@@ -1,0 +1,36 @@
+button {
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.primary-btn {
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      159.16deg,
+      #917ce4 26.46%,
+      rgba(63, 45, 137, 0) 116.55%
+    );
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 6px 6px 10px rgba(255, 255, 255, 0.3);
+    @include filter(drop-shadow(0px 4px 6px rgb(55, 46, 152)));
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &:hover:not([disabled]) {
+    box-shadow: -3px -3px 5px #ffffff, 3px 3px 3px rgb(0 0 0 / 3%),
+      inset 3px 3px 3px rgb(0 0 0 / 2%), inset -3px -3px 6px #ffffff;
+
+    .inner {
+      box-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.2);
+      @include filter(drop-shadow(0px 1px 3px rgb(55, 46, 152)));
+    }
+  }
+}

@@ -1,0 +1,26 @@
+// Font size
+@each $key, $value in $fontSizes {
+  .fs-#{$key} {
+    font-size: #{$value};
+  }
+}
+
+// Font color
+@each $color, $colorValue in $themeColors {
+  .color-#{$color} {
+    color: #{$colorValue};
+  }
+}
+
+// Font weights
+$fontWeights: ("200", "300", "400", "500", "600", "700", "800", "900");
+
+@each $weight in $fontWeights {
+  .fw-#{$weight} {
+    font-weight: #{$weight};
+  }
+}
+
+.text-shadow {
+  text-shadow: 0.668026px 0.668026px 0.668026px #ffffff;
+}

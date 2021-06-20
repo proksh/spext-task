@@ -1,0 +1,9 @@
+.__react_component_tooltip {
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  box-shadow: -6px -6px 10px #ffffff, 6px 6px 6px rgba(0, 0, 0, 0.05),
+    inset 6px 6px 6px rgba(0, 0, 0, 0.05), inset -6px -6px 13px #ffffff !important;
+  color: map-get($themeColors, "medium") !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}

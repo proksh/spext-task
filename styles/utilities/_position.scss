@@ -1,0 +1,25 @@
+$rounded: (static, absolute, relative, fixed);
+
+@each $key in $rounded {
+  @include responsive("pos-#{$key}") {
+    position: $key;
+  }
+}
+
+$direction: (top, bottom, left, right);
+
+@each $spacekey, $spacevalue in $spaceamounts {
+  @each $directionkey in $direction {
+    @include responsive("#{$directionkey}-#{$spacekey}") {
+      #{$directionkey}: $spacevalue;
+    }
+  }
+}
+
+$zindexs: (0, 1, 2, 3, 4);
+
+@each $zindex in $zindexs {
+  @include responsive("zindex-#{$zindex}") {
+    z-index: $zindex;
+  }
+}

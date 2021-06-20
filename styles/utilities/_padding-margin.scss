@@ -1,0 +1,42 @@
+$sides: (
+  "": (
+    "top",
+    "bottom",
+    "left",
+    "right",
+  ),
+  "t": (
+    "top",
+  ),
+  "b": (
+    "bottom",
+  ),
+  "l": (
+    "left",
+  ),
+  "r": (
+    "right",
+  ),
+  "y": (
+    "top",
+    "bottom",
+  ),
+  "x": (
+    "left",
+    "right",
+  ),
+);
+
+@each $spacekey, $spacevalue in $spaceamounts {
+  @each $prefix, $value in $sides {
+    @each $property in $value {
+      @include responsive("m#{$prefix}-#{$spacekey}") {
+        margin-#{$property}: #{$spacevalue};
+      }
+
+      @include responsive("p#{$prefix}-#{$spacekey}") {
+        padding-#{$property}: #{$spacevalue};
+      }
+    }
+  }
+}

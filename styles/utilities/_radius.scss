@@ -1,0 +1,12 @@
+$rounded: (
+  "20": 20px,
+  "26": 26px,
+  "40": 40px,
+  "circle": 1000px,
+);
+
+@each $key, $value in $rounded {
+  .r-#{$key} {
+    border-radius: $value;
+  }
+}

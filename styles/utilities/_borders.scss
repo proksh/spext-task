@@ -1,0 +1,17 @@
+$sides: (
+  "": "all",
+  "t": "top",
+  "b": "bottom",
+  "l": "left",
+  "r": "right",
+);
+
+@each $color, $colorValue in $themeColors {
+  @each $key, $value in $sides {
+    $property: if($key == "", "", -#{$value});
+
+    .b#{$key}-#{$color} {
+      border#{$property}: 1px solid #{$colorValue};
+    }
+  }
+}

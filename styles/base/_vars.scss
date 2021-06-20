@@ -1,0 +1,76 @@
+$fontFamily: (
+  "primary":
+    '"Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+);
+
+$themeColors: (
+  white: #ffffff,
+  black: #000000,
+  brand: #e2ddff,
+  brandLight: #e1deea,
+  grayLight: #f8f8f8,
+  grayText: #aeaeae,
+  gray100: #eeeeee,
+  gray200: #dedde3,
+  light: #beb7c0,
+  medium: #aa9bbe,
+  dark: #86748d,
+  gradLight:
+    linear-gradient(159.16deg, #917ce4 26.46%, rgba(63, 45, 137, 0) 116.55%),
+  gradDark: linear-gradient(327.56deg, #5d24d6 19.23%, #7e74ed 81.76%),
+);
+
+$fontSizes: (
+  caption: "12px",
+  body: "16px",
+  subtitle: "22px",
+);
+
+$shadows: (
+  reg3: "0px 40px 66px rgba(65, 44, 100, 0.3)",
+  reg5: "26px 20px 53px rgba(54, 48, 116, 0.3)",
+  brand4:
+    "3px 3px 6.5px rgba(37, 5, 57, 0.51), inset 6.5px 6.5px 10px rgba(255, 255, 255, 0.2)",
+  neo2:
+    "-6px -6px 10px #FFFFFF, 6px 6px 6px rgba(0, 0, 0, 0.05), inset 6px 6px 6px rgba(0, 0, 0, 0.05), inset -6px -6px 13px #FFFFFF",
+);
+
+$hoverShadows: (
+  neo2:
+    "-3px -3px 5px #FFFFFF, 3px 3px 3px rgba(0, 0, 0, 0.03), inset 3px 3px 3px rgba(0, 0, 0, 0.02), inset -3px -3px 6px #FFFFFF",
+);
+
+$spaceamounts: (
+  0: 0,
+  4: 4px,
+  6: 6px,
+  8: 8px,
+  10: 10px,
+  12: 12px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
+  28: 28px,
+  32: 32px,
+  40: 40px,
+  48: 48px,
+  56: 56px,
+  64: 64px,
+  72: 72px,
+  80: 80px,
+  88: 88px,
+  96: 96px,
+  104: 104px,
+  112: 112px,
+  120: 120px,
+  200: 200px,
+  208: 208px,
+  216: 216px,
+  224: 224px,
+  232: 232px,
+  240: 240px,
+  1140: 1140px,
+  50: 50%,
+  100: 100%,
+  auto: auto,
+);
