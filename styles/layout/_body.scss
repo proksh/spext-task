@@ -17,6 +17,15 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+main {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+main.loaded {
+  opacity: 1;
+}
+
 a {
   color: inherit;
   text-decoration: none;

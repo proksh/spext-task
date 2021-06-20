@@ -68,15 +68,18 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
 
   const onNextBack = () => {
     if (userData.repeat === 'one') {
-      updateTime(0)
+      updateTime(0);
     } else {
       changeAudioIndex(audioIndex - 1);
     }
   }
 
   const onNextClick = () => {
-    if (userData.repeat === 'one') {
-      updateTime(0)
+    if (userData.repeat === 'notselected' && (audioIndex === audioList.length - 1)) {
+      updateTime(0);
+      return null;
+    } else if (userData.repeat === 'one') {
+      updateTime(0);
     } else {
       changeAudioIndex(audioIndex + 1);
     }
@@ -85,7 +88,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
   return (
     <div className="player-control">
       {/* Audio player */}
-      <audio ref={audioRef} onTimeUpdate={updateTime} onLoadedMetadata={updateTime}>
+      <audio ref={audioRef} onTimeUpdate={updateTime} onLoadedMetadata={updateTime} onEnded={onNextClick}>
         <source src={source || undefined} type="audio/mpeg" />
         Your browser does not support the audio tag.
       </audio>
