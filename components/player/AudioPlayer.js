@@ -24,25 +24,27 @@ export default function AudioPlayer() {
 
 
   return (
-    <div className="pos-relative d-flex flex-column xl:flex-row mx-auto xl:align-items-center w-100 py-96 zindex-2 maxw-1140">
+    <div className="relative flex mx-auto xl:items-center w-full py-96 z-10 max-w-6xl">
       <ReactTooltip place="top" type="light" effect="solid" />
-      <div className="col-10 audio-detial-wrapper">
-        <AudioDetails
-          currentAudio={audioList[audioIndex]}
-          userData={userData}
-          setUserData={setUserData}
-        />
-      </div>
-      <div className="col-12">
-        <DraggablePlayerControlWrapper>
-          <PlayerControl
-            audioIndex={audioIndex}
-            audioList={audioList}
+      <div className="grid grid-cols-22 w-full">
+        <div className="col-span-10 audio-detial-wrapper">
+          <AudioDetails
+            currentAudio={audioList[audioIndex]}
             userData={userData}
-            changeAudioIndex={changeAudioIndex}
             setUserData={setUserData}
           />
-        </DraggablePlayerControlWrapper>
+        </div>
+        <div className="col-span-12 flex flex-col justify-center">
+          <DraggablePlayerControlWrapper>
+            <PlayerControl
+              audioIndex={audioIndex}
+              audioList={audioList}
+              userData={userData}
+              changeAudioIndex={changeAudioIndex}
+              setUserData={setUserData}
+            />
+          </DraggablePlayerControlWrapper>
+        </div>
       </div>
     </div>
   )

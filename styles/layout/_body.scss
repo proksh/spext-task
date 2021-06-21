@@ -9,12 +9,9 @@ body {
   color: map-get($themeColors, "dark");
 }
 
-:focus-visible {
-  outline: none;
-
-  &::before {
-    opacity: 1 !important;
-  }
+:focus-visible,
+:focus {
+  outline: none !important;
 }
 
 * {
@@ -26,17 +23,8 @@ body {
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-main {
-  opacity: 0;
-  transition: opacity 0.5s ease-in;
-}
-
-main.loaded {
-  opacity: 1;
 }
 
 a {
@@ -49,8 +37,4 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.transition {
-  transition: all 0.3s ease-in-out;
 }

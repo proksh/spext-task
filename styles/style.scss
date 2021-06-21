@@ -13,25 +13,10 @@
 @import "layout/overwrites";
 @import "layout/body";
 
-// Utilities
-@import "utilities/display";
-@import "utilities/position";
-@import "utilities/padding-margin";
-@import "utilities/height-width";
-@import "utilities/flex";
-@import "utilities/layouts";
-@import "utilities/borders";
-@import "utilities/typography";
-@import "utilities/bg";
-@import "utilities/radius";
-@import "utilities/shadow";
-@import "utilities/overflow";
-@import "utilities/cursor";
-
 // Components
 @import "components/buttons";
 @import "components/audio-detail";
-@import "components/player-control";
+@import "components/player-slider";
 @import "components/tooltip";
 
 // Pages

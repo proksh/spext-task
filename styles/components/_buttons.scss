@@ -1,23 +1,14 @@
 button {
-  position: relative;
   cursor: pointer;
   padding: 0;
-  transition: all 0.3s ease-in-out;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 1000px;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
-    opacity: 0;
-  }
 }
 
+// Play, next, back buttons
 .primary-btn {
+  box-shadow: -6px -6px 10px #ffffff, 6px 6px 6px rgba(0, 0, 0, 0.05),
+    inset 6px 6px 6px rgba(0, 0, 0, 0.05), inset -6px -6px 13px #ffffff;
+  transition: all 300ms ease-in-out;
+
   .inner {
     display: flex;
     align-items: center;
@@ -27,7 +18,7 @@ button {
       #917ce4 26.46%,
       rgba(63, 45, 137, 0) 116.55%
     );
-    transition: all 0.3s ease-in-out;
+    transition: all 300ms ease-in-out;
     box-shadow: inset 6px 6px 10px rgba(255, 255, 255, 0.3);
     @include filter(drop-shadow(0px 4px 6px rgb(55, 46, 152)));
   }
@@ -37,13 +28,14 @@ button {
     cursor: not-allowed;
   }
 
-  &:hover:not([disabled]) {
-    box-shadow: -3px -3px 5px #ffffff, 3px 3px 3px rgb(0 0 0 / 3%),
-      inset 3px 3px 3px rgb(0 0 0 / 2%), inset -3px -3px 6px #ffffff;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
+    box-shadow: -3px -3px 6px #ffffff, 3px 3px 3px rgba(0, 0, 0, 0.05),
+      inset 6px 6px 6px rgba(0, 0, 0, 0.05), inset -6px -6px 13px #ffffff;
 
     .inner {
-      box-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.2);
-      @include filter(drop-shadow(0px 1px 3px rgb(55, 46, 152)));
+      box-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.3);
+      @include filter(drop-shadow(0px 3px 5px rgb(55, 46, 152)));
     }
   }
 }

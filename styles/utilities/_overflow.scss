@@ -1,7 +1,0 @@
-$rounded: (hidden, scroll, visible);
-
-@each $key in $rounded {
-  .overflow-#{$key} {
-    overflow: $key;
-  }
-}

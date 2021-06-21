@@ -1,7 +1,0 @@
-$cursors: (pointer, grab, help, not-allowed, wait, ew-resize);
-
-@each $key in $cursors {
-  @include responsive("cursor-#{$key}") {
-    cursor: $key;
-  }
-}

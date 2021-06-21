@@ -6,7 +6,7 @@ export default function Home() {
   const mainRef = useRef(null);
 
   useEffect(() => {
-    mainRef.current.classList.add('loaded');
+    mainRef.current.classList.remove('opacity-0');
   }, [])
 
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="description" content="Spext Task" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main ref={mainRef} className="bg-brand minh-100vh d-flex flex-column justify-content-center">
+      <main ref={mainRef} className="bg-brand flex flex-col justify-center min-h-screen transition-opacity opacity-0">
         <AudioPlayer />
       </main>
     </>

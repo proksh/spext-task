@@ -94,13 +94,13 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
       </audio>
 
       {/* Button controls */}
-      <div className="d-flex align-items-center justify-content-center mb-40">
+      <div className="flex items-center justify-center mb-40">
         {/* Left side */}
-        <div className="d-flex">
+        <div className="flex">
           <button
             data-tip="Shuffle"
             onClick={() => setUserData({ ...userData, shuffle: !userData.shuffle })}
-            className="h-32 w-32 d-flex align-items-center justify-content-center r-circle bg-white hover-bg-grayLight hover-shadow-neo2 mr-16"
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 mr-16"
           >
             {userData.shuffle ?
               <Image width="24px" height="24px" src="/icons/shuffle-selected.svg" className="w-24" alt="Shuffle Selected" /> :
@@ -110,25 +110,27 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           <button
             data-tip="Repeat"
             onClick={onRepeatClick}
-            className="h-32 w-32 d-flex align-items-center justify-content-center r-circle bg-white hover-bg-grayLight hover-shadow-neo2"
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
           >
             <Image width="24px" height="24px" src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
           </button>
         </div>
         {/* Main Buttons */}
-        <div className="d-flex align-items-center mx-56">
+        <div className="flex items-center mx-56">
           <button
             onClick={onNextBack}
-            className="primary-btn d-flex bg-grayLight align-items-center justify-content-center r-circle p-6 shadow-neo2"
+            className="primary-btn flex bg-grayLight items-center justify-center rounded-full p-6"
             disabled={userData.repeat === 'notselected' && (audioIndex === 0)}
           >
-            <div className="h-28 w-28 r-circle inner">
+            <div className="h-28 w-28 rounded-full inner">
               <Image width="20px" height="20px" src="/icons/left.svg" className="w-20" alt="Previous Audio" />
             </div>
           </button>
           <button
-            onClick={() => toggleAudioPlay(!isPlaying)} className="primary-btn d-flex bg-grayLight align-items-center justify-content-center r-circle p-10 shadow-neo2 mx-24">
-            <div className="h-48 w-48 r-circle inner">
+            onClick={() => toggleAudioPlay(!isPlaying)}
+            className="primary-btn flex bg-grayLight items-center justify-center rounded-full p-10 mx-24"
+          >
+            <div className="h-48 w-48 rounded-full inner">
               {isPlaying ?
                 <Image width="20px" height="20px" src="/icons/pause.svg" className="w-20" alt="Pause Audio" /> :
                 <Image width="20px" height="20px" src="/icons/play.svg" className="w-20" alt="Play Audio" />
@@ -137,25 +139,25 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           </button>
           <button
             onClick={onNextClick}
-            className="primary-btn d-flex bg-grayLight align-items-center justify-content-center r-circle p-6 shadow-neo2"
+            className="primary-btn flex bg-grayLight items-center justify-center rounded-full p-6"
             disabled={userData.repeat === 'notselected' && (audioIndex === audioList.length - 1)}
           >
-            <div className="h-28 w-28 r-circle inner">
+            <div className="h-28 w-28 rounded-full inner">
               <Image width="20px" height="20px" src="/icons/right.svg" className="w-20" alt="Next Audio" />
             </div>
           </button>
         </div>
         {/* Right side */}
-        <div className="d-flex">
+        <div className="flex">
           <button
             data-tip="Repeat"
-            className="h-32 w-32 d-flex align-items-center justify-content-center r-circle bg-white hover-bg-grayLight mr-16 hover-shadow-neo2"
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 mr-16"
           >
             <Image width="24px" height="24px" src="/icons/repeat.svg" className="w-24" alt="Repeat playlist" />
           </button>
           <button
             data-tip="Customize"
-            className="h-32 w-32 d-flex align-items-center justify-content-center r-circle bg-white hover-bg-grayLight hover-shadow-neo2"
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
           >
             <Image width="24px" height="24px" src="/icons/customize.svg" className="w-24" alt="Customize voice" />
           </button>
@@ -174,11 +176,11 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
         />
       </div>
       {/* Time count */}
-      <div className="d-flex justify-content-between pt-12">
-        <p className="fs-caption color-medium">
+      <div className="flex justify-between pt-12">
+        <p className="text-caption text-medium">
           {moment.utc(timeData.currentTime * 1000).format('mm:ss')}
         </p>
-        <p className="fs-caption color-medium text-right">
+        <p className="text-caption text-medium text-right">
           {timeData.totalTime > 0 ? moment.utc(timeData.totalTime * 1000).format('mm:ss') : "00:00"}
         </p>
       </div>

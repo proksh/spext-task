@@ -1,9 +1,4 @@
-.player-control-wrapper {
-  border-radius: 0 40px 40px 0;
-}
-
 .player-control-slider-wrapper {
-  // height: 10px;
   padding: 3px;
   border-radius: 100px;
   box-shadow: -2px -2px 3px #ffffff, 2px 2px 3px rgba(0, 0, 0, 0.05),
@@ -37,14 +32,15 @@
     border-radius: 1000px;
     transform: translateY(-12px);
     cursor: pointer;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover {
-      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15),
-        inset 3px 3px 3px rgba(0, 0, 0, 0.05), inset -3px -3px 8px #ffffff;
+    &:hover,
+    &:focus {
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15),
+        inset 2px 2px 2px rgba(0, 0, 0, 0.05), inset -2px -2px 4px #ffffff;
 
       &::before {
-        box-shadow: 0px 1px 2px rgba(98, 75, 242, 0.63),
+        box-shadow: 0px 1px 1px rgba(98, 75, 242, 0.63),
           inset 6.5px 6.5px 10px rgba(255, 255, 255, 0.2);
       }
     }
@@ -70,7 +66,7 @@
       background: linear-gradient(327.56deg, #5d24d6 19.23%, #7e74ed 81.76%);
       box-shadow: 0px 2px 3px rgba(98, 75, 242, 0.63),
         inset 6.5px 6.5px 10px rgba(255, 255, 255, 0.2);
-      transition: box-shadow 0.3s ease-in-out;
+      transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
 }
