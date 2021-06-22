@@ -103,8 +103,8 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
             className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1 sm:mr-16"
           >
             {userData.shuffle ?
-              <Image width="24px" height="24px" src="/icons/shuffle-selected.svg" className="w-24" alt="Shuffle Selected" /> :
-              <Image width="24px" height="24px" src="/icons/shuffle.svg" className="w-24" alt="Shuffle" />
+              <img src="/icons/shuffle-selected.svg" className="w-24" alt="Shuffle Selected" /> :
+              <img src="/icons/shuffle.svg" className="w-24" alt="Shuffle" />
             }
           </button>
           <button
@@ -112,7 +112,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
             onClick={onRepeatClick}
             className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1"
           >
-            <Image width="24px" height="24px" src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
+            <img src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
           </button>
         </div>
         {/* Main Buttons */}
@@ -123,7 +123,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
             disabled={userData.repeat === 'notselected' && (audioIndex === 0)}
           >
             <div className="h-28 w-28 rounded-full inner">
-              <Image width="20px" height="20px" src="/icons/left.svg" className="w-20" alt="Previous Audio" />
+              <img src="/icons/left.svg" className="w-20" alt="Previous Audio" />
             </div>
           </button>
           <button
@@ -132,8 +132,8 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           >
             <div className="h-48 w-48 rounded-full inner">
               {isPlaying ?
-                <Image width="20px" height="20px" src="/icons/pause.svg" className="w-20" alt="Pause Audio" /> :
-                <Image width="20px" height="20px" src="/icons/play.svg" className="w-20" alt="Play Audio" />
+                <img src="/icons/pause.svg" className="w-20" alt="Pause Audio" /> :
+                <img src="/icons/play.svg" className="w-20" alt="Play Audio" />
               }
             </div>
           </button>
@@ -143,7 +143,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
             disabled={userData.repeat === 'notselected' && (audioIndex === audioList.length - 1)}
           >
             <div className="h-28 w-28 rounded-full inner">
-              <Image width="20px" height="20px" src="/icons/right.svg" className="w-20" alt="Next Audio" />
+              <img src="/icons/right.svg" className="w-20" alt="Next Audio" />
             </div>
           </button>
         </div>
@@ -154,13 +154,13 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
             onClick={onRepeatClick}
             className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1 sm:mr-16"
           >
-            <Image width="24px" height="24px" src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
+            <img src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
           </button>
           <button
             data-tip="Customize"
             className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1"
           >
-            <Image width="24px" height="24px" src="/icons/customize.svg" className="w-24" alt="Customize voice" />
+            <img src="/icons/customize.svg" className="w-24" alt="Customize voice" />
           </button>
         </div>
       </div>

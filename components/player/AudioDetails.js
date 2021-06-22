@@ -25,15 +25,15 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
         <div className="flex items-center justify-between">
           <button
             data-tip="Add to playlist"
-            className="h-32 w-32 bg-grayLight rounded-full mr-16 flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
+            className="h-40 w-40 rounded-full mr-12 flex items-center justify-center"
           >
-            <Image width="20px" height="20px" src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
+            <img src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
           </button>
           <button
             data-tip="Share"
-            className="h-32 w-32 bg-grayLight rounded-full flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
+            className="h-40 w-40 rounded-full flex items-center justify-center"
           >
-            <Image width="20px" height="20px" src="/icons/share.svg" alt="Share" className="w-20" />
+            <img src="/icons/share.svg" alt="Share" className="w-20" />
           </button>
         </div>
       </div>
@@ -43,6 +43,7 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
           <div className="bg-black p-10 rounded-26 bg-grayLight shadow-neo2 image-wrapper">
             <div className="relative pb-full bg-purple rounded-20 overflow-hidden shadow-brand4 image">
               <Image
+                className="rounded-20"
                 layout="fill"
                 src={currentAudio.image || undefined}
                 alt="Album Cover"
@@ -68,21 +69,21 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
               className="h-32 w-32 bg-grayLight rounded-full sm:mr-16 flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
             >
               {userData?.likedAudios?.includes(currentAudio) ?
-                <Image width="20px" height="20px" src="/icons/heart-fill.svg" alt="Liked this audio" className="w-20" /> :
-                <Image width="20px" height="20px" src="/icons/heart-line.svg" alt="Like" className="w-20" />
+                <img src="/icons/heart-fill.svg" alt="Liked this audio" className="w-20" /> :
+                <img src="/icons/heart-line.svg" alt="Like" className="w-20" />
               }
             </button>
             <button
               data-tip="Add to playlist"
               className="h-32 w-32 bg-grayLight rounded-full mr-16 hidden sm:flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
             >
-              <Image width="20px" height="20px" src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
+              <img src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
             </button>
             <button
               data-tip="Share"
               className="h-32 w-32 bg-grayLight rounded-full hidden sm:flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
             >
-              <Image width="20px" height="20px" src="/icons/share.svg" alt="Share" className="w-20" />
+              <img src="/icons/share.svg" alt="Share" className="w-20" />
             </button>
           </div>
         </div>
