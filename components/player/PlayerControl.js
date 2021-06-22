@@ -100,7 +100,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           <button
             data-tip="Shuffle"
             onClick={() => setUserData({ ...userData, shuffle: !userData.shuffle })}
-            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 sm:mr-16"
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1 sm:mr-16"
           >
             {userData.shuffle ?
               <Image width="24px" height="24px" src="/icons/shuffle-selected.svg" className="w-24" alt="Shuffle Selected" /> :
@@ -110,7 +110,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           <button
             data-tip="Repeat"
             onClick={onRepeatClick}
-            className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
+            className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1"
           >
             <Image width="24px" height="24px" src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
           </button>
@@ -152,13 +152,13 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           <button
             data-tip="Repeat"
             onClick={onRepeatClick}
-            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 sm:mr-16"
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1 sm:mr-16"
           >
             <Image width="24px" height="24px" src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
           </button>
           <button
             data-tip="Customize"
-            className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
+            className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-shadow hover:shadow-neo1"
           >
             <Image width="24px" height="24px" src="/icons/customize.svg" className="w-24" alt="Customize voice" />
           </button>

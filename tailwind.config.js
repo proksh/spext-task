@@ -75,6 +75,9 @@ module.exports = {
       '40': '40px',
       'full': '9999px',
     },
+    fontFamily: {
+      'sans': ['"Roboto"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Oxygen', 'Ubuntu', 'Cantarell', '"Fira Sans"', '"Droid Sans"', '"Helvetica Neue"', 'sans-serif'],
+    },
     extend: {
       gridTemplateColumns: {
         '22': 'repeat(22, minmax(0, 1fr))',

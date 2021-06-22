@@ -1,40 +1,8 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
-
-::selection {
-  background-color: rgba(map-get($themeColors, "dark"), 0.3);
-  color: map-get($themeColors, "dark");
-}
-
-:focus-visible,
 :focus {
   outline: none !important;
+  outline-color: map-get($themeColors, "brand") !important;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-size: 13px;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.truncate {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+:focus-visible {
+  outline: 5px auto map-get($themeColors, "brand") !important;
 }
