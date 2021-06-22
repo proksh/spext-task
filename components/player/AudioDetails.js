@@ -18,9 +18,26 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
   }
 
   return (
-    <div className="audio-detail grid grid-cols-22 relative bg-white rounded-40 p-48 shadow-reg5 z-10">
+    <div className="audio-detail grid grid-cols-12 sm:grid-cols-22 relative sm:bg-white rounded-40 px-24 pt-24 pb-12 sm:p-32 lg:p-40 xl:p-48 sm:shadow-reg5 z-10 w-full">
       <div className="col-span-12">
-        <div className="pr-8">
+        <div className="sm:pr-8">
+          <div className="flex sm:hidden justify-between items-center mb-16 relative z-10">
+            <p className=" text-gray text-caption text-shadow pt-10">Now playing</p>
+            <div className="flex items-center justify-between">
+              <button
+                data-tip="Add to playlist"
+                className="h-32 w-32 bg-grayLight rounded-full mr-16 flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
+              >
+                <Image width="20px" height="20px" src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
+              </button>
+              <button
+                data-tip="Share"
+                className="h-32 w-32 bg-grayLight rounded-full flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
+              >
+                <Image width="20px" height="20px" src="/icons/share.svg" alt="Share" className="w-20" />
+              </button>
+            </div>
+          </div>
           <div className="bg-black p-10 rounded-26 bg-grayLight shadow-neo2 image-wrapper">
             <div className="relative pb-full bg-purple rounded-20 overflow-hidden shadow-brand4 image">
               <Image
@@ -34,9 +51,9 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
           </div>
         </div>
       </div>
-      <div className="col-span-10">
-        <div className="pl-16 flex flex-col justify-between h-full">
-          <p className="text-gray text-caption text-shadow pt-10">Now playing</p>
+      <div className="col-span-12 sm:col-span-10">
+        <div className="pt-32 sm:pt-0 sm:pl-16 flex flex-row sm:flex-col justify-between h-full">
+          <p className="hidden sm:block text-gray text-caption text-shadow pt-10">Now playing</p>
           <div>
             <p className="text-dark text-subtitle font-black mb-4 truncate">{currentAudio.title}</p>
             <p className="text-medium text-body font-medium mb-4">{currentAudio.artist}</p>
@@ -46,7 +63,7 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
             <button
               data-tip="Like"
               onClick={onLikeClick}
-              className="h-32 w-32 bg-grayLight rounded-full mr-16 flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
+              className="h-32 w-32 bg-grayLight rounded-full sm:mr-16 flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
             >
               {userData?.likedAudios?.includes(currentAudio) ?
                 <Image width="20px" height="20px" src="/icons/heart-fill.svg" alt="Liked this audio" className="w-20" /> :
@@ -55,13 +72,13 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
             </button>
             <button
               data-tip="Add to playlist"
-              className="h-32 w-32 bg-grayLight rounded-full mr-16 flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
+              className="h-32 w-32 bg-grayLight rounded-full mr-16 hidden sm:flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
             >
               <Image width="20px" height="20px" src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
             </button>
             <button
               data-tip="Share"
-              className="h-32 w-32 bg-grayLight rounded-full flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
+              className="h-32 w-32 bg-grayLight rounded-full hidden sm:flex items-center justify-center shadow-neo2 transition-all hover:shadow-neo1 focus:shadow-neo1"
             >
               <Image width="20px" height="20px" src="/icons/share.svg" alt="Share" className="w-20" />
             </button>

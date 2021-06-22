@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="description" content="Spext Task" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main ref={mainRef} className="bg-brand flex flex-col justify-center min-h-screen transition-opacity opacity-0">
+      <main ref={mainRef} className="bg-white sm:bg-brand flex flex-col justify-center sm:justify-start xl:justify-center min-h-screen transition-opacity opacity-0">
         <AudioPlayer />
       </main>
     </>

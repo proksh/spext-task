@@ -24,17 +24,17 @@ export default function AudioPlayer() {
 
 
   return (
-    <div className="relative flex mx-auto xl:items-center w-full py-96 z-10 max-w-6xl">
+    <div className="relative flex mx-auto xl:items-center h-100 w-full xl:py-96 z-10 xl:max-w-6xl">
       <ReactTooltip place="top" type="light" effect="solid" />
-      <div className="grid grid-cols-22 w-full">
-        <div className="col-span-10 audio-detial-wrapper">
+      <div className="grid grid-cols-12 xl:grid-cols-22 w-full">
+        <div className="col-span-12 sm:col-start-2 sm:col-end-12 md:col-start-3 md:col-end-11 lg:col-start-4 lg:col-end-10 xl:col-span-10 audio-detial-wrapper">
           <AudioDetails
             currentAudio={audioList[audioIndex]}
             userData={userData}
             setUserData={setUserData}
           />
         </div>
-        <div className="col-span-12 flex flex-col justify-center">
+        <div className="col-start-1 col-end-13 xl:col-span-12 flex flex-col xl:justify-center">
           <DraggablePlayerControlWrapper>
             <PlayerControl
               audioIndex={audioIndex}

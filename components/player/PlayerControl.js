@@ -86,7 +86,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
   }
 
   return (
-    <div className="player-control">
+    <div className="player-control flex flex-col">
       {/* Audio player */}
       <audio ref={audioRef} onTimeUpdate={updateTime} onLoadedMetadata={updateTime} onEnded={onNextClick}>
         <source src={source || undefined} type="audio/mpeg" />
@@ -94,13 +94,13 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
       </audio>
 
       {/* Button controls */}
-      <div className="flex items-center justify-center mb-40">
+      <div className="flex items-center justify-center mb-40 order-2 sm:order-1">
         {/* Left side */}
         <div className="flex">
           <button
             data-tip="Shuffle"
             onClick={() => setUserData({ ...userData, shuffle: !userData.shuffle })}
-            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 mr-16"
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 sm:mr-16"
           >
             {userData.shuffle ?
               <Image width="24px" height="24px" src="/icons/shuffle-selected.svg" className="w-24" alt="Shuffle Selected" /> :
@@ -110,13 +110,13 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           <button
             data-tip="Repeat"
             onClick={onRepeatClick}
-            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
+            className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
           >
             <Image width="24px" height="24px" src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
           </button>
         </div>
         {/* Main Buttons */}
-        <div className="flex items-center mx-56">
+        <div className="flex items-center mx-48 sm:mx-56">
           <button
             onClick={onNextBack}
             className="primary-btn flex bg-grayLight items-center justify-center rounded-full p-6"
@@ -128,7 +128,7 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
           </button>
           <button
             onClick={() => toggleAudioPlay(!isPlaying)}
-            className="primary-btn flex bg-grayLight items-center justify-center rounded-full p-10 mx-24"
+            className="primary-btn flex bg-grayLight items-center justify-center rounded-full p-10 mx-16 xl:mx-24"
           >
             <div className="h-48 w-48 rounded-full inner">
               {isPlaying ?
@@ -151,13 +151,14 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
         <div className="flex">
           <button
             data-tip="Repeat"
-            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 mr-16"
+            onClick={onRepeatClick}
+            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1 sm:mr-16"
           >
-            <Image width="24px" height="24px" src="/icons/repeat.svg" className="w-24" alt="Repeat playlist" />
+            <Image width="24px" height="24px" src={userData.repeat ? `/icons/repeat-${userData.repeat}.svg` : undefined} className="w-24" alt="Repeat one song" />
           </button>
           <button
             data-tip="Customize"
-            className="h-32 w-32 flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
+            className="h-32 w-32 hidden sm:flex items-center justify-center rounded-full bg-white hover:bg-grayLight transition-all hover:shadow-neo1 focus:shadow-neo1"
           >
             <Image width="24px" height="24px" src="/icons/customize.svg" className="w-24" alt="Customize voice" />
           </button>
@@ -165,24 +166,26 @@ export default function PlayerControl({ audioIndex, audioList, changeAudioIndex,
       </div>
 
       {/* Slider */}
-      <div className="player-control-slider-wrapper">
-        <ReactSlider
-          className="player-control-slider"
-          thumbClassName="player-control-slider-thumb"
-          trackClassName="player-control-slider-track"
-          value={timeData.ratio * 100}
-          onAfterChange={updateTime}
-          onSliderClick={updateTime}
-        />
-      </div>
-      {/* Time count */}
-      <div className="flex justify-between pt-12">
-        <p className="text-caption text-medium">
-          {moment.utc(timeData.currentTime * 1000).format('mm:ss')}
-        </p>
-        <p className="text-caption text-medium text-right">
-          {timeData.totalTime > 0 ? moment.utc(timeData.totalTime * 1000).format('mm:ss') : "00:00"}
-        </p>
+      <div className="order-1">
+        <div className="player-control-slider-wrapper">
+          <ReactSlider
+            className="player-control-slider"
+            thumbClassName="player-control-slider-thumb"
+            trackClassName="player-control-slider-track"
+            value={timeData.ratio * 100}
+            onAfterChange={updateTime}
+            onSliderClick={updateTime}
+          />
+        </div>
+        {/* Time count */}
+        <div className="flex justify-between pt-12">
+          <p className="text-caption text-medium">
+            {moment.utc(timeData.currentTime * 1000).format('mm:ss')}
+          </p>
+          <p className="text-caption text-medium text-right">
+            {timeData.totalTime > 0 ? moment.utc(timeData.totalTime * 1000).format('mm:ss') : "00:00"}
+          </p>
+        </div>
       </div>
     </div>
   )

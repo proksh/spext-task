@@ -6,4 +6,10 @@
   color: map-get($themeColors, "medium") !important;
   font-size: 12px !important;
   font-weight: 500 !important;
+
+  display: none !important;
+
+  @include xl {
+    display: block !important;
+  }
 }
