@@ -9,9 +9,9 @@ import DraggablePlayerControlWrapper from './DraggablePlayerControlWrapper'
 export default function AudioPlayer() {
   const [audioIndex, setAudioIndex] = useState(0);
   const [userData, setUserData] = useState({
-    likedAudios: [],
+    likedAudios: [audioList[0]],
     shuffle: false,
-    repeat: 'notselected',
+    repeat: 'selected',
   })
 
   const changeAudioIndex = value => {

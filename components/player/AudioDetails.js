@@ -25,15 +25,15 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
         <div className="flex items-center justify-between">
           <button
             data-tip="Add to playlist"
-            className="h-40 w-40 rounded-full mr-12 flex items-center justify-center"
+            className="h-32 w-32 rounded-full mr-16 flex items-center justify-center"
           >
-            <Image width="20px" height="20px" unoptimized={true} src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
+            <Image width="24px" height="24px" unoptimized={true} src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-24" />
           </button>
           <button
             data-tip="Share"
-            className="h-40 w-40 rounded-full flex items-center justify-center"
+            className="h-32 w-32 rounded-full flex items-center justify-center"
           >
-            <Image width="20px" height="20px" unoptimized={true} src="/icons/share.svg" alt="Share" className="w-20" />
+            <Image width="24px" height="24px" unoptimized={true} src="/icons/share.svg" alt="Share" className="w-24" />
           </button>
         </div>
       </div>
