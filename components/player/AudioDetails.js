@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import React, { useState } from 'react'
+import React from 'react'
 import Image from "next/image";
 
 export default function AudioDetails({ currentAudio, userData, setUserData }) {
@@ -27,13 +27,13 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
             data-tip="Add to playlist"
             className="h-40 w-40 rounded-full mr-12 flex items-center justify-center"
           >
-            <img src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
+            <Image width="20px" height="20px" unoptimized={true} src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
           </button>
           <button
             data-tip="Share"
             className="h-40 w-40 rounded-full flex items-center justify-center"
           >
-            <img src="/icons/share.svg" alt="Share" className="w-20" />
+            <Image width="20px" height="20px" unoptimized={true} src="/icons/share.svg" alt="Share" className="w-20" />
           </button>
         </div>
       </div>
@@ -69,21 +69,21 @@ export default function AudioDetails({ currentAudio, userData, setUserData }) {
               className="h-32 w-32 bg-grayLight rounded-full sm:mr-16 flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
             >
               {userData?.likedAudios?.includes(currentAudio) ?
-                <img src="/icons/heart-fill.svg" alt="Liked this audio" className="w-20" /> :
-                <img src="/icons/heart-line.svg" alt="Like" className="w-20" />
+                <Image width="20px" height="20px" unoptimized={true} src="/icons/heart-fill.svg" alt="Liked this audio" className="w-20" /> :
+                <Image width="20px" height="20px" unoptimized={true} src="/icons/heart-line.svg" alt="Like" className="w-20" />
               }
             </button>
             <button
               data-tip="Add to playlist"
               className="h-32 w-32 bg-grayLight rounded-full mr-16 hidden sm:flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
             >
-              <img src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
+              <Image width="20px" height="20px" unoptimized={true} src="/icons/add-to-playlist.svg" alt="Add to playlist" className="w-20" />
             </button>
             <button
               data-tip="Share"
               className="h-32 w-32 bg-grayLight rounded-full hidden sm:flex items-center justify-center shadow-neo2 transition-shadow hover:shadow-neo1"
             >
-              <img src="/icons/share.svg" alt="Share" className="w-20" />
+              <Image width="20px" height="20px" unoptimized={true} src="/icons/share.svg" alt="Share" className="w-20" />
             </button>
           </div>
         </div>
